@@ -207,6 +207,8 @@ Used for secure access to cloud VPC
 IPSec – Port 500 / 4500
 Used in hybrid cloud setups
 ________________________________________
+
+
 🧭 Summary Table of Important Ports (Quick Revision)
 Protocol	Port	Usage
 HTTP	80	Websites
