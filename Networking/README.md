@@ -537,3 +537,138 @@ Enable VPC Flow Logs to monitor traffic
 
 
 
+4. Hands-On with Networking Commands
+Practice essential networking commands like:
+ping (check connectivity)
+traceroute / tracert (trace packet routes)
+netstat (network statistics)
+curl (make HTTP requests)
+dig / nslookup (DNS lookup)
+Task: Create a cheat sheet or short guide explaining the purpose and usage of each command.
+
+
+📘 Purpose of Each Command (Quick Summary Table)
+## 📘 Networking Commands — Quick Summary
+
+| Command        | Purpose                                      | Example Usage                       |
+|----------------|----------------------------------------------|--------------------------------------|
+| `ping`         | Test connectivity & measure latency          | `ping google.com`                    |
+| `traceroute`   | Trace packet route (Linux/macOS)             | `traceroute google.com`              |
+| `tracert`      | Trace packet route (Windows)                 | `tracert google.com`                 |
+| `netstat`      | Show network connections, ports, routing     | `netstat -tulpn`                     |
+| `curl`         | Send HTTP requests / API calls                | `curl https://api.github.com`        |
+| `dig`          | DNS lookup, detailed DNS information         | `dig google.com`                     |
+| `nslookup`     | DNS lookup (simple)                          | `nslookup google.com`                |
+
+📝 Detailed Cheat Sheet (README Format)
+1️⃣ ping — Check Connectivity
+
+Purpose:
+
+Tests if a host is reachable
+
+Measures latency (ms)
+
+Verifies DNS resolution
+
+Usage:
+
+ping google.com
+ping <IP_ADDRESS>
+
+2️⃣ traceroute (Linux/macOS) / tracert (Windows)
+
+Purpose:
+
+Shows the path packets travel to reach destination
+
+Identifies slow or failing network hops
+
+Linux/macOS:
+
+traceroute google.com
+
+
+Windows:
+
+tracert google.com
+
+3️⃣ netstat — Network Statistics
+
+Purpose:
+
+Lists open ports
+
+Shows active connections
+
+Checks services listening on ports
+
+Linux:
+
+netstat -tulpn
+
+
+Common flags:
+
+-t = TCP
+
+-u = UDP
+
+-l = Listening ports
+
+-p = Process using port
+
+-n = Numeric output
+
+4️⃣ curl — Make HTTP Requests / Test APIs
+
+Purpose:
+
+Call APIs
+
+Debug HTTP endpoints
+
+Test services in DevOps pipelines
+
+Examples:
+
+curl https://google.com
+curl -I https://google.com        # fetch headers
+curl -X GET https://api.github.com
+curl -d "name=rahul" https://example.com/api
+
+5️⃣ dig — Advanced DNS Lookup
+
+Purpose:
+
+Shows DNS records (A, CNAME, MX, TXT)
+
+Debug DNS issues
+
+Check domain propagation
+
+Usage:
+
+dig google.com
+dig google.com A
+dig google.com MX
+
+6️⃣ nslookup — Simple DNS Lookup
+
+Purpose: Quick domain-to-IP resolution.
+Usage:
+
+nslookup google.com
+
+📌 Additional Useful Commands (Optional Bonus)
+🔍 hostname -I — Get local IP
+hostname -I
+
+🌐 ip a — View network interfaces
+ip a
+
+📊 ss — Modern replacement of netstat
+ss -tulpn
+
+
+
