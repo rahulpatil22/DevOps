@@ -89,9 +89,37 @@ NAT
 Examples:
 Ethernet
 WiFi (802.11)
+
+
+
+
+Feature	OSI Model (7 Layers)	TCP/IP Model (4 Layers)
+Full Form	Open Systems Interconnection	Transmission Control Protocol / Internet Protocol
+Number of Layers	7 layers	4 layers
+Layers	Application, Presentation, Session, Transport, Network, Data Link, Physical	Application, Transport, Internet, Network Access
+Developed by	ISO (International Standards Organization)	DoD (Department of Defense)
+Usage	Theoretical model	Practical model used in real networking
+Approach	Protocol-independent, conceptual	Protocol-based (TCP, IP standard)
+Transport Protocols	TCP/UDP (conceptually)	TCP/UDP (actual implementation)
+Network Layer Protocols	IP (conceptually)	IP, ICMP, IGMP
+Data Encapsulation	More detailed (7 steps)	Fewer steps (4-layer encapsulation)
+Layer-to-Layer Communication	Strict hierarchy	Less strict, more flexible
+Mapping	1 layer ↔ 1 function	One TCP/IP layer covers multiple OSI layers
+Application Support	More separated roles (presentation, session)	All merged into Application layer
+Preferred For	Teaching & understanding networking	Actual data transmission on the Internet
 MAC addresses
 ARP
 Physical cables & switches
+
+🔄 OSI → TCP/IP Layer Mapping
+OSI Layer	Corresponding TCP/IP Layer
+Application	Application
+Presentation	Application
+Session	Application
+Transport	Transport
+Network	Internet
+Data Link	Network Access
+Physical	Network Access
 
 
 
