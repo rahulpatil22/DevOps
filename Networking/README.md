@@ -345,14 +345,17 @@ Only ALLOW rules (No deny rules)
 
 Automatically allows return traffic (stateful)
 
-🧭 Quick Concepts
-Concept	Meaning
-Inbound rules	Traffic allowed toward EC2
-Outbound rules	Traffic allowed from EC2
-CIDR	IP range (e.g., 0.0.0.0/0, 203.0.113.10/32)
-/32	Single IP address
-Stateful	Response traffic automatically allowed
-Least privilege	Only open required ports
+## 🧭 Quick Concepts
+
+| Concept         | Meaning                                      |
+|-----------------|-----------------------------------------------|
+| Inbound rules   | Traffic allowed **toward** EC2               |
+| Outbound rules  | Traffic allowed **from** EC2                 |
+| CIDR            | IP range (e.g., `0.0.0.0/0`, `203.0.113.10/32`) |
+| /32             | Single IP address                            |
+| Stateful        | Response traffic automatically allowed       |
+| Least privilege | Only open the required ports and IP ranges   |
+
 🛠 Prerequisites
 
 AWS account
