@@ -298,5 +298,226 @@ IPSec – Ports 500 / 4500
 | Kubernetes API  | 6443        | Cluster control        |
 | Docker Daemon   | 2375 / 2376 | Container builds       |
 
+3. AWS EC2 and Security Groups
+Launch an AWS EC2 instance (free tier is fine).
+Learn about Security Groups, their rules, and their significance in securing cloud instances.
+Task: Write a step-by-step guide or blog on how to create and configure Security Groups.
+
+📌 Table of Contents
+
+📘 Overview
+
+🧭 Quick Concepts
+
+🛠 Prerequisites
+
+✅ Step 1 — Launch an EC2 Instance
+
+✅ Step 2 — Create & Configure Security Groups
+
+🌐 Inbound & Outbound Rule Examples
+
+💻 AWS CLI Commands
+
+🧱 Terraform Example
+
+🔐 Best Practices
+
+🧪 Troubleshooting
+
+📎 Quick Port Reference
+
+📌 Recap
+
+📘 Overview
+
+EC2 (Elastic Compute Cloud)
+A virtual machine (server) you can launch in AWS.
+
+Security Group (SG)
+A stateful virtual firewall attached to EC2 instances that controls:
+
+Inbound traffic → What can enter the EC2 instance
+
+Outbound traffic → What EC2 can access outside
+
+Only ALLOW rules (No deny rules)
+
+Automatically allows return traffic (stateful)
+
+🧭 Quick Concepts
+Concept	Meaning
+Inbound rules	Traffic allowed toward EC2
+Outbound rules	Traffic allowed from EC2
+CIDR	IP range (e.g., 0.0.0.0/0, 203.0.113.10/32)
+/32	Single IP address
+Stateful	Response traffic automatically allowed
+Least privilege	Only open required ports
+🛠 Prerequisites
+
+AWS account
+
+IAM user with EC2 permissions
+
+SSH key pair (for Linux access)
+
+(Optional) AWS CLI installed
+
+(Optional) Terraform installed
+
+✅ Step 1 — Launch an EC2 Instance
+
+Go to AWS Console → EC2 → Instances → Launch Instances
+
+Select Amazon Linux 2 AMI (Free-tier eligible)
+
+Instance type: t2.micro
+
+Create/download key pair:
+
+my-keypair.pem
+chmod 400 my-keypair.pem
+
+
+Network settings → Create new Security Group (or use default)
+
+Launch the instance
+
+Connect via SSH:
+
+ssh -i my-keypair.pem ec2-user@<PUBLIC_IP>
+
+✅ Step 2 — Create & Configure Security Groups
+🎯 Create a Security Group
+
+Go to EC2 → Security Groups → Create Security Group
+
+Name:
+
+sg-dev-ssh-http
+
+
+Description:
+
+Allow SSH from my IP and HTTP from anywhere
+
+
+Choose correct VPC
+
+🎯 Add Inbound Rules (Examples)
+Type	Port	Source	Purpose
+SSH	22	YOUR_IP/32	Secure login
+HTTP	80	0.0.0.0/0	Web traffic
+HTTPS	443	0.0.0.0/0	Secure web traffic
+MySQL	3306	10.0.1.0/24	App → DB
+🎯 Outbound Rules
+
+Default:
+
+ALL traffic → 0.0.0.0/0
+
+
+Recommended for most cases unless tightened security is required.
+
+🎯 Attach Security Group to EC2
+
+Go to EC2 → Instances → Select instance
+
+Actions → Security → Change security groups
+
+Add the newly created SG
+
+Save
+
+🌐 Inbound & Outbound Rule Examples (Real Use Cases)
+Use Case	Inbound Rule	Outbound Rule
+SSH access	22 from YOUR_IP/32	Allow all
+Public Web Server	80/443 from 0.0.0.0/0	Allow all
+Private Database	3306 from App SG	Allow all
+Redis Cache	6379 from App SG	Allow all
+💻 AWS CLI Commands
+Create Security Group
+aws ec2 create-security-group \
+  --group-name sg-dev-ssh-http \
+  --description "Allow SSH and HTTP" \
+  --vpc-id vpc-1234567890abcdef
+
+Add SSH Rule
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-1234567890abcdef \
+  --protocol tcp --port 22 \
+  --cidr 203.0.113.10/32
+
+Add HTTP Rule
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-1234567890abcdef \
+  --protocol tcp --port 80 \
+  --cidr 0.0.0.0/0
+
+Attach SG to EC2
+aws ec2 modify-instance-attribute \
+  --instance-id i-1234567890abcdef \
+  --groups sg-1234567890abcdef
+
+🧱 Terraform Example
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_security_group" "web" {
+  name        = "sg-web-ssh"
+  description = "Allow SSH & HTTP"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["203.0.113.10/32"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_instance" "web" {
+  ami                    = "ami-0abcdef1234567890"
+  instance_type          = "t2.micro"
+  key_name               = "my-keypair"
+  vpc_security_group_ids = [aws_security_group.web.id]
+}
+
+
+Deploy:
+
+terraform init
+terraform apply -auto-approve
+
+🔐 Best Practices
+
+Allow SSH only from specific IPs, not 0.0.0.0/0
+
+Use Security Group references (SG-to-SG communication)
+
+Place DBs in private subnets
+
+Use HTTPS everywhere
+
+Tag resources (Environment, Owner, Purpose)
+
+Use Terraform for production environments
+
+Enable VPC Flow Logs to monitor traffic
+
 
 
