@@ -223,6 +223,137 @@ K8s API	6443	Cluster control
 Docker Daemon	2375/2376	Container builds
 
 
+🌐 1. Web Protocols
+🌍 HTTP (Port 80)
+Unencrypted web traffic.
+Used in DevOps for:
+•	Health checks (K8s readiness/liveness probes)
+•	Microservice communication
+•	Load balancers (NGINX/Apache)
+•	CI testing during deployment
+________________________________________
+🔐 HTTPS (Port 443)
+Secure web traffic (TLS/SSL).
+Used in DevOps for:
+•	Secure API calls
+•	Kubernetes Ingress (TLS)
+•	GitHub, DockerHub access
+•	Cloud dashboards
+________________________________________
+🔑 2. Remote Access & Configuration
+🖥️ SSH (Port 22)
+Secure remote shell.
+Used for:
+•	Logging into servers (EC2, VM)
+•	Ansible connections
+•	Git over SSH
+•	CI/CD deployments
+•	Secure file transfer (SCP/SFTP)
+________________________________________
+📁 SFTP (Port 22)
+Secure File Transfer Protocol (via SSH).
+Used for:
+•	Uploading artifacts
+•	Backup files
+•	Secure config transfers
+________________________________________
+📦 3. File Transfer Protocols
+📡 FTP (Port 21)
+Unsecured file transfer.
+Used for:
+•	Legacy systems
+•	File migrations
+•	Patch distributions
+________________________________________
+🔒 FTPS (Ports 990/989)
+Secure FTP using TLS.
+Used for:
+•	Enterprise secure file transfer
+________________________________________
+🌍 4. DNS & Name Resolution
+🌐 DNS (Port 53 TCP/UDP)
+Converts domain names ↔ IP address.
+Used in DevOps for:
+•	Kubernetes service discovery
+•	Cloud networking (Route53, Azure DNS)
+•	Internal microservices naming
+Example:
+auth-service.default.svc.cluster.local
+________________________________________
+✉ 5. Email Protocols (Alerts & Monitoring)
+Protocol	Port	Role
+📤 SMTP	25 / 587	Sending alert emails (Prometheus, Jenkins)
+📥 IMAP	143 / 993	Reading email alerts
+📩 POP3	110 / 995	Legacy retrieval
+________________________________________
+🔗 6. Application & API Protocols
+🧑‍💻 REST APIs (HTTP/HTTPS)
+Standard API communication.
+Used in:
+•	Kubernetes API
+•	Terraform providers
+•	Cloud APIs (AWS/GCP/Azure)
+•	GitHub Actions API
+________________________________________
+⚡ gRPC (Port 50051)
+High-performance microservice communication.
+Used for:
+•	Cloud-native services
+•	High-throughput APIs
+________________________________________
+🗃 7. Database Ports
+Database	Port	Use in DevOps
+🐬 MySQL	3306	App databases, backups
+🐘 PostgreSQL	5432	Cloud-native DB
+🍃 MongoDB	27017	NoSQL deployments
+🚀 Redis	6379	Caching layer for apps
+________________________________________
+🐳 8. Docker & Kubernetes Ports
+🐋 Docker Daemon
+•	2375 → Insecure
+•	2376 → Secure TLS
+Used for:
+•	Remote Docker builds
+•	Docker Swarm clusters
+________________________________________
+☸ Kubernetes Core Ports
+Component	Port	Purpose
+API Server	6443	Cluster control
+kubelet	10250	Node-agent communication
+ETCD	2379–2380	Cluster state
+NodePort	30000–32767	App exposure
+________________________________________
+🛡 9. VPN & Security Protocols
+🔐 TLS/HTTPS
+Secure communication for:
+•	Git
+•	Docker
+•	Web apps
+•	APIs
+🔗 OpenVPN (Port 1194)
+Secure access to cloud VPCs.
+🛡 IPsec (Ports 500 / 4500)
+Used in:
+•	Hybrid cloud
+•	Site-to-site VPNs
+________________________________________
+🔥 Quick Revision Table (Top Ports)
+Protocol	Port	Purpose
+HTTP	80	Websites
+HTTPS	443	Secure websites/APIs
+SSH	22	Server access
+DNS	53	Domain resolution
+FTP	21	File transfer
+SMTP	25/587	Alerts
+MySQL	3306	DB
+PostgreSQL	5432	DB
+Redis	6379	Cache
+K8s API	6443	Cluster control
+Docker	2375/2376	Container engine
+
+
+
+
 
 
 
