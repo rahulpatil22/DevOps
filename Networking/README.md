@@ -1,234 +1,293 @@
-1.Understand OSI & TCP/IP Models
-Learn about the OSI and TCP/IP models, including their layers and purposes.
-Task: Write examples of how each layer applies to real-world scenarios (e.g., HTTP at the Application Layer, TCP at the Transport Layer).
-=>
-OSI Model (7 Layers) – With Real-World Examples
+#️⃣ 1. OSI & TCP/IP Models – With Real-World Examples
+🖼 OSI Model (7 Layers)
 <img width="5667" height="2834" alt="image" src="https://github.com/user-attachments/assets/53c94ef9-1f1b-48ef-a89f-87ebdf524201" />
-
 1️⃣ Application Layer (Layer 7)
-What it does: Provides services to end-users (browser, apps, email).
-Real-world examples:
-HTTP/HTTPS → Browsing websites (Chrome, Firefox)
-SMTP → Sending emails (Gmail, Outlook)
-DNS → Converting google.com to IP address
-FTP/SFTP → Uploading files to servers
-2️⃣ Presentation Layer (Layer 6)
-What it does: Data formatting, encryption, compression.
-Real-world examples:
-TLS/SSL encryption → Secure websites (https://)
-JPEG, PNG → Image formats
-MP3, MP4 → Audio/video compression
-JSON/XML → Data formatting for APIs
-3️⃣ Session Layer (Layer 5)
-What it does: Opens, manages, and ends sessions between systems.
-Real-world examples:
-Login sessions to websites
-API session tokens
-Keeping connection alive while uploading a large file
-Remote desktop sessions
-4️⃣ Transport Layer (Layer 4)
-What it does: Ensures reliable or fast data transfer between apps.
-Protocols & examples:
-✔ TCP (reliable, connection-oriented)
-Email sending
-Browser page loading
-File transfer
-WhatsApp message delivery guarantee
-✔ UDP (fast, no delivery guarantee)
-Video streaming (YouTube)
-Online gaming
-Live cricket/football streaming
-VoIP calls
-5️⃣ Network Layer (Layer 3)
-What it does: Routing packets across networks.
-Real-world examples:
-IP addressing (IPv4/IPv6)
-Routers forwarding your data
-Traceroute showing hops
-VPNs changing your IP
-6️⃣ Data Link Layer (Layer 2)
-What it does: MAC addressing and communication between devices in same network.
-Real-world examples:
-Switches working with MAC addresses
-ARP converting IP → MAC
-WiFi (802.11) frame handling
-Ethernet communication
-7️⃣ Physical Layer (Layer 1)
-What it does: Actual bits over physical media.
-Examples:
-Fiber optic cables
-Ethernet cables
-WiFi radio waves
-Network interface cards
-Electrical signals
 
-TCP/IP Model (4 Layers) – With Examples
+Purpose: Services for apps (browser, email, etc.)
+
+Examples:
+
+HTTP/HTTPS → Websites
+
+SMTP → Sending emails
+
+DNS → Domain name resolution
+
+FTP/SFTP → File transfer
+
+2️⃣ Presentation Layer (Layer 6)
+
+Purpose: Data formatting & encryption.
+
+Examples:
+
+TLS/SSL → HTTPS security
+
+JPEG/PNG → Image encoding
+
+MP3/MP4 → Media encoding
+
+JSON/XML → API formatting
+
+3️⃣ Session Layer (Layer 5)
+
+Purpose: Manage sessions/connection lifecycle.
+
+Examples:
+
+Login sessions
+
+API tokens
+
+RDP sessions
+
+Large file uploads
+
+4️⃣ Transport Layer (Layer 4)
+
+Purpose: Reliable or fast delivery.
+
+✔ TCP (Reliable)
+
+Web browsing
+
+Email
+
+File transfer
+
+✔ UDP (Fast)
+
+YouTube streaming
+
+Online gaming
+
+VoIP calls
+
+5️⃣ Network Layer (Layer 3)
+
+Purpose: Routing & IP addressing.
+
+Examples:
+
+IPv4/IPv6
+
+Routers
+
+Traceroute
+
+VPN
+
+6️⃣ Data Link Layer (Layer 2)
+
+Purpose: MAC addressing & frames.
+
+Examples:
+
+Switches
+
+ARP
+
+WiFi frames
+
+Ethernet
+
+7️⃣ Physical Layer (Layer 1)
+
+Purpose: Transmission of bits.
+
+Examples:
+
+Fiber cables
+
+Ethernet cables
+
+WiFi radio signals
+
+NIC cards
+
+🌐 TCP/IP Model (4 Layers)
 <img width="726" height="601" alt="image" src="https://github.com/user-attachments/assets/1958279f-db4e-4528-80c4-6f238634cf91" />
 1️⃣ Application Layer
-(Combines OSI Layers 5, 6, 7)
+
+(OSI Layers 5, 6, 7 combined)
+
 Examples:
-HTTP / HTTPS
+
+HTTP/HTTPS
+
 DNS
-SMTP, POP3
+
+SMTP
+
 DHCP
+
 SSH
+
 2️⃣ Transport Layer
-Same as OSI’s Layer 4.
+
 Examples:
-✔ TCP → Web browsing, email, file transfers
-✔ UDP → Gaming, video streaming, calls
+
+TCP
+
+UDP
+
 3️⃣ Internet Layer
-(Equivalent to OSI Network Layer)
+
+(OSI Network layer)
+
 Examples:
-IP addressing
-Routing
+
+IP
+
 ICMP (ping)
+
 NAT
+
+Routing
+
 4️⃣ Network Access Layer
-(Combines OSI Layers 1 & 2)
+
+(OSI Layers 1 & 2 combined)
+
 Examples:
+
 Ethernet
-WiFi (802.11)
 
-2.Protocols and Ports for DevOps
-Study the most commonly used protocols (e.g., HTTP, HTTPS, FTP, SSH, DNS) and their port numbers.
-Task: Create a blog, article, GitHub page, or README listing these protocols and explaining their relevance to DevOps workflows
-=>
-Protocols & Ports Every DevOps Engineer Must Know
+WiFi
+
+ARP
+
+#️⃣ 2. Protocols & Ports Every DevOps Engineer Must Know
 <img width="1444" height="1882" alt="image" src="https://github.com/user-attachments/assets/d2304573-9e14-4137-8dd3-090ce87dd283" />
-
 🚀 1. Web Protocols
 HTTP – Port 80
-HyperText Transfer Protocol (Unsecured)
-✔ Used in DevOps for:
-•	App health checks (K8s readiness/liveness probes)
-•	Internal microservice communication
-•	Load balancing (NGINX/Apache)
-•	CI testing during deployments
-________________________________________
+
+Used for:
+
+Health checks
+
+Microservice communication
+
+Load balancing (NGINX/Apache)
+
+CI/CD test stages
+
 HTTPS – Port 443
-HTTP Secure (TLS/SSL encrypted)
-✔ Used in DevOps for:
-•	Secure website deployments
-•	Secure API communication
-•	Kubernetes Ingress with SSL
-•	Secure access to cloud dashboards
-•	GitHub / DockerHub secure communication
-________________________________________
+
+Used for:
+
+Secure APIs
+
+Kubernetes Ingress
+
+Cloud dashboards
+
+GitHub / DockerHub
+
 🔐 2. Remote Access & Config Management
 SSH – Port 22
-Secure Shell
-✔ Used in DevOps for:
-•	Connecting to cloud servers (EC2, VM)
-•	Jenkins → server remote deployments
-•	Git operations over SSH
-•	Ansible remote command execution
-•	SCP/SFTP file transfers
-________________________________________
+
+Used for:
+
+EC2/VM login
+
+Jenkins deployments
+
+Git SSH
+
+Ansible
+
+SCP/SFTP
+
 SFTP – Port 22
-Secure File Transfer Protocol (built over SSH)
-✔ Used for:
-•	Secure file transfers during deployment
-•	Uploading artifacts/logs/configs
-________________________________________
+
+Used for secure file transfers.
+
 📦 3. File Transfer Protocols
 FTP – Port 21
-Unsecure file transfer
-✔ Used in DevOps for:
-•	Legacy systems
-•	Automated patch delivery
-•	Migrating old applications
-________________________________________
+
+Used in legacy systems.
+
 FTPS – Port 990 / 989
-FTP over SSL/TLS
-✔ Used when:
-•	Secure file transfer required
-•	VPN + older systems
-________________________________________
+
+Secure FTP over TLS.
+
 🌍 4. DNS & Name Resolution
 DNS – Port 53 (TCP/UDP)
-Domain Name System
-✔ Critical in DevOps for:
-•	Mapping service names to IPs (Kubernetes DNS)
-•	Cloud networking (Route53, Azure DNS)
-•	Resolving internal API names
+
+Used for:
+
+Kubernetes service discovery
+
+Cloud DNS
+
+Microservice names
+
 Example:
+
 frontend-service.default.svc.cluster.local
-________________________________________
-✉ 5. Email Protocols (for Alerts, Monitoring)
+
+✉ 5. Email Protocols (Alerts & Monitoring)
 Protocol	Port	Use in DevOps
-SMTP	25 / 587	Sending alert emails from Jenkins, Prometheus, cloud services
-IMAP	143 / 993	Reading email alerts
-POP3	110 / 995	Legacy email retrieval
-________________________________________
+SMTP	25 / 587	Send alert emails
+IMAP	143 / 993	Read emails
+POP3	110 / 995	Legacy retrieval
 🗂 6. Application & API Protocols
-REST APIs – (HTTP/HTTPS)
-JSON-based API calls
-✔ Used for:
-•	GitHub actions
-•	Kubernetes API (kubectl uses REST)
-•	Terraform providers
-•	Cloud services API
-________________________________________
-gRPC – Port 50051 (default)
-High-performance RPC framework
-✔ Used in:
-•	Microservices on Kubernetes
-•	Cloud native apps
-________________________________________
-⚡ 7. Database Protocols
-Database	Default Port	DevOps Use
-MySQL	3306	App connectivity, backups
-PostgreSQL	5432	Cloud-native apps
-MongoDB	27017	NoSQL deployments
-Redis	6379	Cache layer for microservices
-________________________________________
+REST APIs (HTTP/HTTPS)
+
+Used in:
+
+Kubernetes API
+
+Terraform providers
+
+GitHub Actions
+
+Cloud APIs
+
+gRPC – Port 50051
+
+Used for high-speed microservices.
+
+⚡ 7. Database Ports
+Database	Port	Use
+MySQL	3306	App DB
+PostgreSQL	5432	Cloud apps
+MongoDB	27017	NoSQL
+Redis	6379	Cache
 🧱 8. Container & Orchestration Ports
-Docker Daemon – Port 2375/2376
-2375 → insecure
-2376 → TLS secure
-✔ Used for:
-•	Remote Docker builds
-•	Swarm communication
-•	CI/CD container builds
-________________________________________
+Docker Daemon – 2375/2376
+
+Used for:
+
+Remote builds
+
+Swarm
+
 Kubernetes Components
-Component	Port(s)	Purpose
-API Server	6443	kubectl → cluster
+Component	Port	Purpose
+API Server	6443	Cluster control
 kubelet	10250	Node communication
 ETCD	2379–2380	Cluster state
-NodePort Services	30000–32767	Exposing services
-________________________________________
-🌐 9. VPN & Security Protocols
+NodePort	30000–32767	App exposure
+🌐 9. VPN & Security
 HTTPS/TLS
-Used for securing all DevOps traffic (Git, Docker, APIs)
+
+Secures all DevOps traffic.
+
 OpenVPN – Port 1194
-Used for secure access to cloud VPC
-IPSec – Port 500 / 4500
-Used in hybrid cloud setups
-________________________________________
-
-
-🧭 Summary Table of Important Ports (Quick Revision)
+IPSec – Ports 500 / 4500
+🧭 Summary Table (Quick Revision)
 Protocol	Port	Usage
 HTTP	80	Websites
-HTTPS	443	Secure websites/APIs
-SSH	22	Remote server access
-DNS	53	Domain resolution
-FTP	21	File transfers
-SMTP	25/587	Sending alerts
+HTTPS	443	Secure websites
+SSH	22	Remote access
+DNS	53	DNS resolution
+FTP	21	File transfer
+SMTP	25/587	Alerts
 MySQL	3306	Database
 PostgreSQL	5432	Database
-Redis	6379	Caching
-MongoDB	27017	NoSQL DB
-K8s API	6443	Cluster control
-Docker Daemon	2375/2376	Container builds
-
-
-
-
-
-
-
-
-
+Redis	6379	Cache
+MongoDB	27017	NoSQL
+K8s API	6443	Cluster
+Docker Daemon	2375/2376	Docker engine
