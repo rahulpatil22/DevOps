@@ -279,17 +279,16 @@ OpenVPN – Port 1194
 IPSec – Ports 500 / 4500
 
 
-🧭 Summary Table (Quick Revision)
-Protocol	Port	Usage
-HTTP	80	Websites
-HTTPS	443	Secure websites
-SSH	22	Remote access
-DNS	53	DNS resolution
-FTP	21	File transfer
-SMTP	25/587	Alerts
-MySQL	3306	Database
-PostgreSQL	5432	Database
-Redis	6379	Cache
-MongoDB	27017	NoSQL
-K8s API	6443	Cluster
-Docker Daemon	2375/2376	Docker engine
+
+## 🧭 Summary Table (Quick Revision)
+
+| Protocol        | Port        | Usage                 |
+|-----------------|-------------|------------------------|
+| HTTP            | 80          | Websites               |
+| HTTPS           | 443         | Secure websites/APIs   |
+| SSH             | 22          | Remote server access   |
+| DNS             | 53          | Domain resolution      |
+| FTP             | 21          | File transfers         |
+| SMTP            | 25 / 587    | Sending alerts         |
+| MySQL           | 3306
+
