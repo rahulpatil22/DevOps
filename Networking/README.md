@@ -280,6 +280,7 @@ IPSec – Ports 500 / 4500
 
 
 
+
 ## 🧭 Summary Table (Quick Revision)
 
 | Protocol        | Port        | Usage                 |
@@ -290,5 +291,12 @@ IPSec – Ports 500 / 4500
 | DNS             | 53          | Domain resolution      |
 | FTP             | 21          | File transfers         |
 | SMTP            | 25 / 587    | Sending alerts         |
-| MySQL           | 3306
+| MySQL           | 3306        | Database               |
+| PostgreSQL      | 5432        | Database               |
+| Redis           | 6379        | Caching                |
+| MongoDB         | 27017       | NoSQL DB               |
+| Kubernetes API  | 6443        | Cluster control        |
+| Docker Daemon   | 2375 / 2376 | Container builds       |
+
+
 
