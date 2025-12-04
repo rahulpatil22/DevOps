@@ -277,6 +277,8 @@ Secures all DevOps traffic.
 
 OpenVPN – Port 1194
 IPSec – Ports 500 / 4500
+
+
 🧭 Summary Table (Quick Revision)
 Protocol	Port	Usage
 HTTP	80	Websites
