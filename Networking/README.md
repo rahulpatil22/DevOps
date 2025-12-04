@@ -429,12 +429,15 @@ Add the newly created SG
 
 Save
 
-🌐 Inbound & Outbound Rule Examples (Real Use Cases)
-Use Case	Inbound Rule	Outbound Rule
-SSH access	22 from YOUR_IP/32	Allow all
-Public Web Server	80/443 from 0.0.0.0/0	Allow all
-Private Database	3306 from App SG	Allow all
-Redis Cache	6379 from App SG	Allow all
+## 🌐 Inbound & Outbound Rule Examples (Real Use Cases)
+
+| Use Case          | Inbound Rule            | Outbound Rule |
+|-------------------|-------------------------|----------------|
+| SSH access        | 22 from `YOUR_IP/32`    | Allow all      |
+| Public Web Server | 80/443 from `0.0.0.0/0` | Allow all      |
+| Private Database  | 3306 from App SG        | Allow all      |
+| Redis Cache       | 6379 from App SG        | Allow all      |
+
 💻 AWS CLI Commands
 Create Security Group
 aws ec2 create-security-group \
@@ -518,6 +521,16 @@ Tag resources (Environment, Owner, Purpose)
 Use Terraform for production environments
 
 Enable VPC Flow Logs to monitor traffic
+
+✅ Troubleshooting Table 
+## 🧪 Troubleshooting
+
+| Issue                | Cause                   | Fix                         |
+|----------------------|--------------------------|------------------------------|
+| Cannot SSH           | Port 22 blocked          | Add inbound rule for your IP |
+| Website not loading  | HTTP not allowed         | Add port 80 rule             |
+| DB not reachable     | Wrong CIDR               | Allow from App SG            |
+| Timeout              | Instance in private subnet | Use bastion or ALB        |
 
 
 
