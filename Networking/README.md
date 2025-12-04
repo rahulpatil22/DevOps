@@ -90,36 +90,140 @@ Examples:
 Ethernet
 WiFi (802.11)
 
+2.Protocols and Ports for DevOps
+Study the most commonly used protocols (e.g., HTTP, HTTPS, FTP, SSH, DNS) and their port numbers.
+Task: Create a blog, article, GitHub page, or README listing these protocols and explaining their relevance to DevOps workflows
+=>
+Protocols & Ports Every DevOps Engineer Must Know
+<img width="1444" height="1882" alt="image" src="https://github.com/user-attachments/assets/d2304573-9e14-4137-8dd3-090ce87dd283" />
+
+🚀 1. Web Protocols
+HTTP – Port 80
+HyperText Transfer Protocol (Unsecured)
+✔ Used in DevOps for:
+•	App health checks (K8s readiness/liveness probes)
+•	Internal microservice communication
+•	Load balancing (NGINX/Apache)
+•	CI testing during deployments
+________________________________________
+HTTPS – Port 443
+HTTP Secure (TLS/SSL encrypted)
+✔ Used in DevOps for:
+•	Secure website deployments
+•	Secure API communication
+•	Kubernetes Ingress with SSL
+•	Secure access to cloud dashboards
+•	GitHub / DockerHub secure communication
+________________________________________
+🔐 2. Remote Access & Config Management
+SSH – Port 22
+Secure Shell
+✔ Used in DevOps for:
+•	Connecting to cloud servers (EC2, VM)
+•	Jenkins → server remote deployments
+•	Git operations over SSH
+•	Ansible remote command execution
+•	SCP/SFTP file transfers
+________________________________________
+SFTP – Port 22
+Secure File Transfer Protocol (built over SSH)
+✔ Used for:
+•	Secure file transfers during deployment
+•	Uploading artifacts/logs/configs
+________________________________________
+📦 3. File Transfer Protocols
+FTP – Port 21
+Unsecure file transfer
+✔ Used in DevOps for:
+•	Legacy systems
+•	Automated patch delivery
+•	Migrating old applications
+________________________________________
+FTPS – Port 990 / 989
+FTP over SSL/TLS
+✔ Used when:
+•	Secure file transfer required
+•	VPN + older systems
+________________________________________
+🌍 4. DNS & Name Resolution
+DNS – Port 53 (TCP/UDP)
+Domain Name System
+✔ Critical in DevOps for:
+•	Mapping service names to IPs (Kubernetes DNS)
+•	Cloud networking (Route53, Azure DNS)
+•	Resolving internal API names
+Example:
+frontend-service.default.svc.cluster.local
+________________________________________
+✉ 5. Email Protocols (for Alerts, Monitoring)
+Protocol	Port	Use in DevOps
+SMTP	25 / 587	Sending alert emails from Jenkins, Prometheus, cloud services
+IMAP	143 / 993	Reading email alerts
+POP3	110 / 995	Legacy email retrieval
+________________________________________
+🗂 6. Application & API Protocols
+REST APIs – (HTTP/HTTPS)
+JSON-based API calls
+✔ Used for:
+•	GitHub actions
+•	Kubernetes API (kubectl uses REST)
+•	Terraform providers
+•	Cloud services API
+________________________________________
+gRPC – Port 50051 (default)
+High-performance RPC framework
+✔ Used in:
+•	Microservices on Kubernetes
+•	Cloud native apps
+________________________________________
+⚡ 7. Database Protocols
+Database	Default Port	DevOps Use
+MySQL	3306	App connectivity, backups
+PostgreSQL	5432	Cloud-native apps
+MongoDB	27017	NoSQL deployments
+Redis	6379	Cache layer for microservices
+________________________________________
+🧱 8. Container & Orchestration Ports
+Docker Daemon – Port 2375/2376
+2375 → insecure
+2376 → TLS secure
+✔ Used for:
+•	Remote Docker builds
+•	Swarm communication
+•	CI/CD container builds
+________________________________________
+Kubernetes Components
+Component	Port(s)	Purpose
+API Server	6443	kubectl → cluster
+kubelet	10250	Node communication
+ETCD	2379–2380	Cluster state
+NodePort Services	30000–32767	Exposing services
+________________________________________
+🌐 9. VPN & Security Protocols
+HTTPS/TLS
+Used for securing all DevOps traffic (Git, Docker, APIs)
+OpenVPN – Port 1194
+Used for secure access to cloud VPC
+IPSec – Port 500 / 4500
+Used in hybrid cloud setups
+________________________________________
+🧭 Summary Table of Important Ports (Quick Revision)
+Protocol	Port	Usage
+HTTP	80	Websites
+HTTPS	443	Secure websites/APIs
+SSH	22	Remote server access
+DNS	53	Domain resolution
+FTP	21	File transfers
+SMTP	25/587	Sending alerts
+MySQL	3306	Database
+PostgreSQL	5432	Database
+Redis	6379	Caching
+MongoDB	27017	NoSQL DB
+K8s API	6443	Cluster control
+Docker Daemon	2375/2376	Container builds
 
 
 
-Feature	OSI Model (7 Layers)	TCP/IP Model (4 Layers)
-Full Form	Open Systems Interconnection	Transmission Control Protocol / Internet Protocol
-Number of Layers	7 layers	4 layers
-Layers	Application, Presentation, Session, Transport, Network, Data Link, Physical	Application, Transport, Internet, Network Access
-Developed by	ISO (International Standards Organization)	DoD (Department of Defense)
-Usage	Theoretical model	Practical model used in real networking
-Approach	Protocol-independent, conceptual	Protocol-based (TCP, IP standard)
-Transport Protocols	TCP/UDP (conceptually)	TCP/UDP (actual implementation)
-Network Layer Protocols	IP (conceptually)	IP, ICMP, IGMP
-Data Encapsulation	More detailed (7 steps)	Fewer steps (4-layer encapsulation)
-Layer-to-Layer Communication	Strict hierarchy	Less strict, more flexible
-Mapping	1 layer ↔ 1 function	One TCP/IP layer covers multiple OSI layers
-Application Support	More separated roles (presentation, session)	All merged into Application layer
-Preferred For	Teaching & understanding networking	Actual data transmission on the Internet
-MAC addresses
-ARP
-Physical cables & switches
-
-🔄 OSI → TCP/IP Layer Mapping
-OSI Layer	Corresponding TCP/IP Layer
-Application	Application
-Presentation	Application
-Session	Application
-Transport	Transport
-Network	Internet
-Data Link	Network Access
-Physical	Network Access
 
 
 
